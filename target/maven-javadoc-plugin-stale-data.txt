@@ -1,0 +1,49 @@
+@options
+@packages
+-encoding
+'UTF-8'
+-protected
+-source
+'21'
+-sourcepath
+'D:/Documents/NetBeansProjects/FilmCatalog/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2023. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'D:/Documents/NetBeansProjects/FilmCatalog/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'FilmCatalog 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'FilmCatalog 1.0-SNAPSHOT API'
+Controller
+Main
+Model
+View
+D:\Documents\NetBeansProjects\FilmCatalog\src\main\java = 1698171174853
+D:\Documents\NetBeansProjects\FilmCatalog\target\site\apidocs\allclasses-index.html = 1698174353384
+D:\Documents\NetBeansProjects\FilmCatalog\target\site\apidocs\allpackages-index.html = 1698174353388
+D:\Documents\NetBeansProjects\FilmCatalog\target\site\apidocs\copy.svg = 1698174353428
+D:\Documents\NetBeansProjects\FilmCatalog\target\site\apidocs\element-list = 1698174353275
+D:\Documents\NetBeansProjects\FilmCatalog\target\site\apidocs\help-doc.html = 1698174353420
+D:\Documents\NetBeansProjects\FilmCatalog\target\site\apidocs\index-all.html = 1698174353410
+D:\Documents\NetBeansProjects\FilmCatalog\target\site\apidocs\index.html = 1698174353370
+D:\Documents\NetBeansProjects\FilmCatalog\target\site\apidocs\link.svg = 1698174353430
+D:\Documents\NetBeansProjects\FilmCatalog\target\site\apidocs\member-search-index.js = 1698174353394
+D:\Documents\NetBeansProjects\FilmCatalog\target\site\apidocs\module-search-index.js = 1698174353390
+D:\Documents\NetBeansProjects\FilmCatalog\target\site\apidocs\overview-summary.html = 1698174353415
+D:\Documents\NetBeansProjects\FilmCatalog\target\site\apidocs\overview-tree.html = 1698174353365
+D:\Documents\NetBeansProjects\FilmCatalog\target\site\apidocs\package-search-index.js = 1698174353392
+D:\Documents\NetBeansProjects\FilmCatalog\target\site\apidocs\script.js = 1698174353426
+D:\Documents\NetBeansProjects\FilmCatalog\target\site\apidocs\search-page.js = 1698174353436
+D:\Documents\NetBeansProjects\FilmCatalog\target\site\apidocs\search.html = 1698174353413
+D:\Documents\NetBeansProjects\FilmCatalog\target\site\apidocs\search.js = 1698174353434
+D:\Documents\NetBeansProjects\FilmCatalog\target\site\apidocs\stylesheet.css = 1698174353423
+D:\Documents\NetBeansProjects\FilmCatalog\target\site\apidocs\tag-search-index.js = 1698174353395
+D:\Documents\NetBeansProjects\FilmCatalog\target\site\apidocs\type-search-index.js = 1698174353393
