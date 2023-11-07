@@ -64,9 +64,7 @@ public class FilmView {
             displayMessage("The film catalog is empty.");
         } else {
             displayMessage("Film Catalog:");
-            for (Film film : filmList) {
-                displayMessage("Title: " + film.getTitle() + ", Release Year: " + film.getReleaseYear());
-            }
+            filmList.forEach(film -> displayMessage("Title: " + film.getTitle() + ", Release Year: " + film.getReleaseYear()));
         }
     }
 
@@ -79,7 +77,8 @@ public class FilmView {
         displayMessage("Menu:");
         displayMessage("1. Add a Film");
         displayMessage("2. View Film Catalog");
-        displayMessage("3. Exit");
+        displayMessage("3. Search by");
+        displayMessage("4. Exit");
         String choice = getUserInput("Enter your choice: ");
         try {
             return Integer.parseInt(choice);

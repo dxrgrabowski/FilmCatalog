@@ -2,3 +2,4 @@ View\FilmView.class
 Controller\FilmController.class
 Main\Main.class
 Model\Film.class
+Model\FilmValidationException.class

@@ -1,5 +1,8 @@
 package Model;
 
+import java.util.Set;
+import java.util.HashSet;
+import Model.FilmValidationException;
 /**
  * The Film class represents a film with various properties.
  *
@@ -10,9 +13,10 @@ public class Film {
     private int releaseYear;
     private String director;
     private double rating;
-    // Add other film properties such as genre, duration, description, etc.
 
-    /**
+    private Set<String> tags;
+
+    /**a
      * Constructs a Film object with the specified properties.
      *
      * @param title       The title of the film.
@@ -25,6 +29,7 @@ public class Film {
         this.releaseYear = releaseYear;
         this.director = director;
         this.rating = rating;
+        this.tags = new HashSet<>();
     }
 
     /**
@@ -99,11 +104,59 @@ public class Film {
         this.rating = rating;
     }
 
+    /**
+     * Add a tag to the film for searching purposes.
+     *
+     * @param tag The tag to add.
+     */
+    public void addTag(String tag) {
+        tags.add(tag);
+    }
+
+    /**
+     * Remove a tag from the film.
+     *
+     * @param tag The tag to remove.
+     */
+    public void removeTag(String tag) {
+        tags.remove(tag);
+    }
+
+    /**
+     * Get all tags associated with the film.
+     *
+     * @return A set of tags.
+     */
+    public Set<String> getTags() {
+        return tags;
+    }
+    
+    /**
+     * Validates the data of the film.
+     *
+     * @throws FilmValidationException if the data is invalid.
+     */
+    public void validate() throws FilmValidationException {
+        if (title == null || title.trim().isEmpty()) {
+            throw new FilmValidationException("Title cannot be empty.");
+        }
+        if (releaseYear < 1900 || releaseYear > 2100) {
+            throw new FilmValidationException("Invalid release year.");
+        }
+        if (director == null || director.trim().isEmpty()) {
+            throw new FilmValidationException("Director cannot be empty.");
+        }
+        if (rating < 0.0 || rating > 10.0) {
+            throw new FilmValidationException("Invalid rating. Must be between 0.0 and 10.0.");
+        }
+    }
+
     @Override
     public String toString() {
         return "Title: " + title +
                "\nRelease Year: " + releaseYear +
                "\nDirector: " + director +
-               "\nRating: " + rating;
+               "\nRating: " + rating +
+               "\nTags: " + tags;
     }
 }
