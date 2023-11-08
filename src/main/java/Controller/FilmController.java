@@ -12,6 +12,7 @@ import View.FilmView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 
@@ -53,6 +54,50 @@ public class FilmController {
             filmView.displayMessage("Invalid input: " + e.getMessage());
         }
     }
+
+    public Film addFilm(String filmData) {
+        String title = "";
+        int releaseYear = 0;
+        String director = "";
+        double rating = 0.0;
+
+        Scanner scanner = new Scanner(filmData);
+        scanner.useDelimiter(",");
+
+        if (scanner.hasNext()) {
+            title = scanner.next().trim();
+        } else {
+            scanner.close();
+            return null;
+        }
+
+        if (scanner.hasNextInt()) {
+            releaseYear = scanner.nextInt();
+        } else {
+            scanner.close();
+            return null;
+        }
+
+        if (scanner.hasNext()) {
+            director = scanner.next().trim();
+        } else {
+            scanner.close();
+            return null;
+        }
+
+        if (scanner.hasNextDouble()) {
+            rating = scanner.nextDouble();
+        } else {
+            scanner.close();
+            return null;
+        }
+
+        scanner.close();
+
+        return new Film(title, releaseYear, director, rating);
+    }
+
+
 
     /**
      * Displays the film catalog to the user.
