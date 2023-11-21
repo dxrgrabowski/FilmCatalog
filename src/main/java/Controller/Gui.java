@@ -39,10 +39,13 @@ public class Gui {
     private TextArea outputTextArea;
     private TableView<Film> filmTable;
 
+    private boolean errorAlertShown;
+
     public Gui(Stage primaryStage) {
         this.primaryStage = primaryStage;
     }
-
+    // constructor for tests
+    public Gui() {};
     public void initialize() {
 
         primaryStage.setTitle("Film Catalog");
@@ -184,15 +187,15 @@ public class Gui {
         Tooltip addButtonTooltip = new Tooltip("Click to add a new film");
         addButton.setTooltip(addButtonTooltip);
 
-        searchButton = new Button("Search");
-        searchButton.setStyle("-fx-background-color: #4d4d4d; -fx-text-fill: white;");
-        searchButton.setOnAction(e -> handleSearch());
-        searchButton.setMnemonicParsing(true);
-        searchButton.setText("_Search");
-        Tooltip searchButtonTooltip = new Tooltip("Click to search films");
-        searchButton.setTooltip(searchButtonTooltip);
+//        searchButton = new Button("Search");
+//        searchButton.setStyle("-fx-background-color: #4d4d4d; -fx-text-fill: white;");
+//        searchButton.setOnAction(e -> handleSearch());
+//        searchButton.setMnemonicParsing(true);
+//        searchButton.setText("_Search");
+//        Tooltip searchButtonTooltip = new Tooltip("Click to search films");
+//        searchButton.setTooltip(searchButtonTooltip);
 
-        topPanel.getChildren().addAll(titleField, yearField, directorField, ratingField, addButton, searchButton);
+        topPanel.getChildren().addAll(titleField, yearField, directorField, ratingField, addButton);
 
         HBox bottomPanel = new HBox();
         bottomPanel.setSpacing(10);
@@ -235,7 +238,9 @@ public class Gui {
         return scene2;
     }
 
-    private void addFilm() {
+
+
+    public void addFilm() {
         String title = titleField.getText();
         String yearText = yearField.getText();
         String director = directorField.getText();
@@ -251,13 +256,11 @@ public class Gui {
         if (!yearText.isEmpty()) {
             try {
                 year = Integer.parseInt(yearText);
-                // Sprawdzenie, czy rok nie jest ujemny lub nieprawidłowy
                 if (year < 0) {
                     showAlert("Error", "Nieprawidłowy rok!", Alert.AlertType.ERROR);
                     return;
                 }
             } catch (NumberFormatException e) {
-                // Obsługa błędu - nieprawidłowy format roku
                 showAlert("Error", "Nieprawidłowy format roku!", Alert.AlertType.ERROR);
                 return;
             }
@@ -292,15 +295,28 @@ public class Gui {
         ratingField.clear();
     }
 
-    private void handleSearch() {
-        // Obsługa wyszukiwania...
-    }
 
-    private void showAlert(String title, String message, Alert.AlertType alertType) {
+    public void showAlert(String title, String message, Alert.AlertType alertType) {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(message);
+        alert.setOnCloseRequest(event -> {
+            errorAlertShown = false;
+        });
         alert.showAndWait();
+        errorAlertShown = true;
+    }
+
+    public boolean isErrorAlertShown() {
+        return errorAlertShown;
+    }
+
+    public int getFilmTableSize() {
+        if (filmTable != null && filmTable.getItems() != null) {
+            return filmTable.getItems().size();
+        } else {
+            return 0;
+        }
     }
 }

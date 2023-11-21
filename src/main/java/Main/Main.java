@@ -40,46 +40,9 @@ public class Main extends Application {
 
         launch(args);
     }
-
     public void start(Stage primaryStage) {
         gui = new Gui(primaryStage);
         gui.initialize();
     }
-
-//    private void addFilm() {
-//        String input = addFilmField.getText().trim();
-//
-//        if (!input.isEmpty()) {
-//            Film newFilm = filmController.addFilm(input);
-//            if (newFilm != null) {
-//                filmTable.getItems().add(newFilm);
-//                displayMessage("Film added successfully: " + input);
-//            } else {
-//                displayMessage("Failed to add the film. Please enter all film attributes.");
-//            }
-//        } else {
-//            displayMessage("Please enter a film title.");
-//        }
-//
-//        addFilmField.clear();
-//    }
-
-
-
-
-    private void viewFilmCatalog() {
-        // Implement viewing film catalog logic here
-        displayMessage("View Film Catalog option selected.");
-    }
-
-    private void handleSearch() {
-        // Implement searching by title logic here
-        displayMessage("Search by option selected.");
-    }
-
-    private void displayMessage(String message) {
-        //outputTextArea.appendText(message + "\n");
-    }
-
 
 }
